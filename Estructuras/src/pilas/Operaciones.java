@@ -179,7 +179,6 @@ public class Operaciones {
     /*ejer 10*/
     public void eliminarRepetidos(Pila p) {
         Pila aux = new Pila(p.tope);
-        int n;
         while (!p.estaVacio()) {
             int e = p.pop();
             eliminarTodoElem(p, e);
@@ -191,19 +190,21 @@ public class Operaciones {
 
     /*ejer 12*/
     public void intercambiarAdyacente(Pila p) {
-        Pila aux = new Pila(p.tope);
+        Pila aux = new Pila(p.max);
         while (!p.estaVacio()) {
             int first = p.pop();
-            int second = p.pop();
-            if (second == -1) {
+            if (p.estaVacio()) {
+                aux.push(first);
                 break;
             }
+            int second = p.pop();
             aux.push(second);
             aux.push(first);
         }
 
         p.reset(aux);
     }
+
 
     /*ejer 14*/
     public void llevarParesFondo(Pila p) {
@@ -252,6 +253,28 @@ public class Operaciones {
         c.reset(aux);
 
         return c;
+    }
+
+    /*ejer 20*/
+    public String interseccion(Pila a, Pila b) {
+        eliminarRepetidos(a);
+        eliminarRepetidos(b);
+        String str = "";
+        Pila baux = new Pila(b.max);
+        while (!a.estaVacio()) {
+            int val = a.pop();
+            while (!b.estaVacio()) {
+                int elem = b.pop();
+                if (val == elem) {
+                    str += val + " ";
+                } else {
+                    baux.push(elem);
+                }
+            }
+            b.reset(baux);
+        }
+
+        return "{ " + str + "}";
     }
 
 }

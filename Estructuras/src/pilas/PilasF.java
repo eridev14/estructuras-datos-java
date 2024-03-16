@@ -5,6 +5,10 @@
 package pilas;
 
 import javax.swing.JOptionPane;
+import pilas.practicaPilas1._22_aprobados_fondo;
+import pilas.practicaPilas1._24_eliminar_pares;
+import pilas.practicaPilas1._26_eliminar_primos;
+import pilas.practicaPilas1._28_eliminar_multiplos_x;
 
 /**
  *
@@ -17,7 +21,7 @@ public class PilasF extends javax.swing.JFrame {
      */
     public PilasF() {
         initComponents();
-        setBounds(300, 100, 600, 650);
+        setLocation(300, 100);
     }
 
     Pila p;
@@ -62,11 +66,15 @@ public class PilasF extends javax.swing.JFrame {
         jButton22 = new javax.swing.JButton();
         jButton24 = new javax.swing.JButton();
         jButton25 = new javax.swing.JButton();
-        jButton26 = new javax.swing.JButton();
         jButton27 = new javax.swing.JButton();
+        jButton28 = new javax.swing.JButton();
+        jButton26 = new javax.swing.JButton();
+        jButton29 = new javax.swing.JButton();
+        jButton30 = new javax.swing.JButton();
+        jButton31 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setText("Crear");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -74,8 +82,7 @@ public class PilasF extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(27, 92, 76, 27);
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 70, -1));
 
         jButton2.setText("Adicionar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -83,8 +90,7 @@ public class PilasF extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2);
-        jButton2.setBounds(120, 90, 90, 27);
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, 100, -1));
 
         jButton3.setText("Listar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -92,8 +98,7 @@ public class PilasF extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3);
-        jButton3.setBounds(340, 90, 76, 27);
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 70, 70, -1));
 
         jButton4.setText("Salir");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -101,8 +106,7 @@ public class PilasF extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4);
-        jButton4.setBounds(470, 630, 76, 27);
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 500, -1, -1));
 
         jButton5.setText("Eliminar");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -110,15 +114,13 @@ public class PilasF extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5);
-        jButton5.setBounds(230, 90, 90, 27);
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 90, -1));
 
         area.setColumns(20);
         area.setRows(5);
         jScrollPane1.setViewportView(area);
 
-        getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(30, 230, 240, 360);
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 290, 360));
 
         jButton6.setText("sumar");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -126,8 +128,7 @@ public class PilasF extends javax.swing.JFrame {
                 jButton6ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton6);
-        jButton6.setBounds(300, 230, 90, 27);
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 140, 90, -1));
 
         jButton7.setText("mult 3");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -135,8 +136,7 @@ public class PilasF extends javax.swing.JFrame {
                 jButton7ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton7);
-        jButton7.setBounds(300, 270, 90, 27);
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, 90, -1));
 
         jButton8.setText("contar");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
@@ -144,8 +144,7 @@ public class PilasF extends javax.swing.JFrame {
                 jButton8ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton8);
-        jButton8.setBounds(300, 310, 90, 27);
+        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 220, 90, -1));
 
         jButton9.setText("menor");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
@@ -153,8 +152,7 @@ public class PilasF extends javax.swing.JFrame {
                 jButton9ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton9);
-        jButton9.setBounds(300, 340, 90, 27);
+        getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 260, 90, -1));
 
         jButton10.setText("mayor");
         jButton10.addActionListener(new java.awt.event.ActionListener() {
@@ -162,8 +160,7 @@ public class PilasF extends javax.swing.JFrame {
                 jButton10ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton10);
-        jButton10.setBounds(300, 380, 90, 27);
+        getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 300, 90, -1));
 
         jButton11.setText("del Elem");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
@@ -171,8 +168,7 @@ public class PilasF extends javax.swing.JFrame {
                 jButton11ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton11);
-        jButton11.setBounds(300, 420, 90, 27);
+        getContentPane().add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 340, 90, -1));
 
         jButton12.setText("del Todo");
         jButton12.addActionListener(new java.awt.event.ActionListener() {
@@ -180,13 +176,11 @@ public class PilasF extends javax.swing.JFrame {
                 jButton12ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton12);
-        jButton12.setBounds(300, 470, 90, 27);
+        getContentPane().add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 380, 90, -1));
 
         jLabel1.setFont(new java.awt.Font("Consolas", 1, 36)); // NOI18N
         jLabel1.setText("PILAS");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(230, 20, 108, 43);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, 108, -1));
 
         jButton13.setText("generar2");
         jButton13.addActionListener(new java.awt.event.ActionListener() {
@@ -194,8 +188,7 @@ public class PilasF extends javax.swing.JFrame {
                 jButton13ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton13);
-        jButton13.setBounds(430, 140, 90, 27);
+        getContentPane().add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 100, 90, -1));
 
         jButton14.setText("fondo");
         jButton14.addActionListener(new java.awt.event.ActionListener() {
@@ -203,8 +196,7 @@ public class PilasF extends javax.swing.JFrame {
                 jButton14ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton14);
-        jButton14.setBounds(300, 550, 90, 27);
+        getContentPane().add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 420, 90, -1));
 
         jButton15.setText("delFondo");
         jButton15.addActionListener(new java.awt.event.ActionListener() {
@@ -212,8 +204,7 @@ public class PilasF extends javax.swing.JFrame {
                 jButton15ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton15);
-        jButton15.setBounds(400, 230, 84, 27);
+        getContentPane().add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 460, 90, -1));
 
         jButton16.setText("centrales");
         jButton16.addActionListener(new java.awt.event.ActionListener() {
@@ -221,8 +212,7 @@ public class PilasF extends javax.swing.JFrame {
                 jButton16ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton16);
-        jButton16.setBounds(400, 270, 81, 27);
+        getContentPane().add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 140, 90, -1));
 
         jButton17.setText("repetidos");
         jButton17.addActionListener(new java.awt.event.ActionListener() {
@@ -230,8 +220,7 @@ public class PilasF extends javax.swing.JFrame {
                 jButton17ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton17);
-        jButton17.setBounds(400, 310, 83, 27);
+        getContentPane().add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 180, 90, -1));
 
         jButton18.setText("adyacente");
         jButton18.addActionListener(new java.awt.event.ActionListener() {
@@ -239,8 +228,7 @@ public class PilasF extends javax.swing.JFrame {
                 jButton18ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton18);
-        jButton18.setBounds(400, 350, 88, 27);
+        getContentPane().add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 220, 90, -1));
 
         jButton19.setText("paresFondo");
         jButton19.addActionListener(new java.awt.event.ActionListener() {
@@ -248,8 +236,7 @@ public class PilasF extends javax.swing.JFrame {
                 jButton19ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton19);
-        jButton19.setBounds(400, 390, 96, 27);
+        getContentPane().add(jButton19, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 260, 90, -1));
 
         jButton20.setText("rotacion");
         jButton20.addActionListener(new java.awt.event.ActionListener() {
@@ -257,8 +244,7 @@ public class PilasF extends javax.swing.JFrame {
                 jButton20ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton20);
-        jButton20.setBounds(400, 430, 78, 27);
+        getContentPane().add(jButton20, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, 90, -1));
 
         jButton21.setText("mezcla");
         jButton21.addActionListener(new java.awt.event.ActionListener() {
@@ -266,8 +252,7 @@ public class PilasF extends javax.swing.JFrame {
                 jButton21ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton21);
-        jButton21.setBounds(400, 470, 76, 27);
+        getContentPane().add(jButton21, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 340, 90, -1));
 
         jButton23.setText("crear 2");
         jButton23.addActionListener(new java.awt.event.ActionListener() {
@@ -275,8 +260,7 @@ public class PilasF extends javax.swing.JFrame {
                 jButton23ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton23);
-        jButton23.setBounds(30, 140, 76, 27);
+        getContentPane().add(jButton23, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 70, -1));
 
         jButton22.setText("Adicionar2");
         jButton22.addActionListener(new java.awt.event.ActionListener() {
@@ -284,8 +268,7 @@ public class PilasF extends javax.swing.JFrame {
                 jButton22ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton22);
-        jButton22.setBounds(120, 140, 90, 27);
+        getContentPane().add(jButton22, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 100, -1));
 
         jButton24.setText("Eliminar2");
         jButton24.addActionListener(new java.awt.event.ActionListener() {
@@ -293,8 +276,7 @@ public class PilasF extends javax.swing.JFrame {
                 jButton24ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton24);
-        jButton24.setBounds(230, 140, 90, 27);
+        getContentPane().add(jButton24, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 100, 90, -1));
 
         jButton25.setText("Listar2");
         jButton25.addActionListener(new java.awt.event.ActionListener() {
@@ -302,17 +284,7 @@ public class PilasF extends javax.swing.JFrame {
                 jButton25ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton25);
-        jButton25.setBounds(340, 140, 76, 27);
-
-        jButton26.setText("random");
-        jButton26.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton26ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton26);
-        jButton26.setBounds(300, 510, 90, 27);
+        getContentPane().add(jButton25, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 100, 70, -1));
 
         jButton27.setText("generar");
         jButton27.addActionListener(new java.awt.event.ActionListener() {
@@ -320,8 +292,47 @@ public class PilasF extends javax.swing.JFrame {
                 jButton27ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton27);
-        jButton27.setBounds(430, 90, 90, 27);
+        getContentPane().add(jButton27, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 70, 90, -1));
+
+        jButton28.setText("interseccion");
+        jButton28.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton28ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton28, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 380, 90, -1));
+
+        jButton26.setText("notas");
+        jButton26.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton26ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton26, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 420, 90, -1));
+
+        jButton29.setText("del Pares");
+        jButton29.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton29ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton29, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 460, 90, -1));
+
+        jButton30.setText("del Primos");
+        jButton30.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton30ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton30, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 140, -1, -1));
+
+        jButton31.setText("del Mul x");
+        jButton31.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton31ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton31, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 180, 90, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -446,14 +457,32 @@ public class PilasF extends javax.swing.JFrame {
         p2 = new Pila(n);
     }//GEN-LAST:event_jButton23ActionPerformed
 
-    private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton26ActionPerformed
-
     private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
         int n = Integer.parseInt(JOptionPane.showInputDialog("cantidad"));
         op.llenarRandom(p, n);
     }//GEN-LAST:event_jButton27ActionPerformed
+
+    private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
+        String s = op.interseccion(p, p2);
+        area.append("\n\n Interseccion: " + s);
+    }//GEN-LAST:event_jButton28ActionPerformed
+
+    private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
+        _22_aprobados_fondo.aprobadosFondo(p);
+    }//GEN-LAST:event_jButton26ActionPerformed
+
+    private void jButton29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton29ActionPerformed
+        _24_eliminar_pares.eliminarPares(p);
+    }//GEN-LAST:event_jButton29ActionPerformed
+
+    private void jButton30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton30ActionPerformed
+        _26_eliminar_primos.eliminarPrimos(p);
+    }//GEN-LAST:event_jButton30ActionPerformed
+
+    private void jButton31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton31ActionPerformed
+        int n = Integer.parseInt(JOptionPane.showInputDialog("valor"));
+        _28_eliminar_multiplos_x.eliminarMultiplos(p, n);
+    }//GEN-LAST:event_jButton31ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -512,7 +541,11 @@ public class PilasF extends javax.swing.JFrame {
     private javax.swing.JButton jButton25;
     private javax.swing.JButton jButton26;
     private javax.swing.JButton jButton27;
+    private javax.swing.JButton jButton28;
+    private javax.swing.JButton jButton29;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton30;
+    private javax.swing.JButton jButton31;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
@@ -522,4 +555,5 @@ public class PilasF extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
+
 }

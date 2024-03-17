@@ -5,10 +5,6 @@
 package pilas;
 
 import javax.swing.JOptionPane;
-import pilas.practicaPilas1._22_aprobados_fondo;
-import pilas.practicaPilas1._24_eliminar_pares;
-import pilas.practicaPilas1._26_eliminar_primos;
-import pilas.practicaPilas1._28_eliminar_multiplos_x;
 
 /**
  *
@@ -28,6 +24,8 @@ public class PilasF extends javax.swing.JFrame {
     Pila p2;
     Pila p3;
     Operaciones op = new Operaciones();
+    OperacionesPracticaPares opPares = new OperacionesPracticaPares();
+    OperacionesPracticaImpares opImpares = new OperacionesPracticaImpares();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -72,6 +70,8 @@ public class PilasF extends javax.swing.JFrame {
         jButton29 = new javax.swing.JButton();
         jButton30 = new javax.swing.JButton();
         jButton31 = new javax.swing.JButton();
+        jButton32 = new javax.swing.JButton();
+        jButton33 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -334,6 +334,22 @@ public class PilasF extends javax.swing.JFrame {
         });
         getContentPane().add(jButton31, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 180, 90, -1));
 
+        jButton32.setText("frecuencia");
+        jButton32.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton32ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton32, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 220, 90, -1));
+
+        jButton33.setText("serie");
+        jButton33.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton33ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton33, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 260, 90, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -468,21 +484,31 @@ public class PilasF extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton28ActionPerformed
 
     private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
-        _22_aprobados_fondo.aprobadosFondo(p);
+        opPares.aprobadosFondo(p);
     }//GEN-LAST:event_jButton26ActionPerformed
 
     private void jButton29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton29ActionPerformed
-        _24_eliminar_pares.eliminarPares(p);
+        opPares.eliminarPares(p);
     }//GEN-LAST:event_jButton29ActionPerformed
 
     private void jButton30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton30ActionPerformed
-        _26_eliminar_primos.eliminarPrimos(p);
+        opPares.eliminarPrimos(p);
     }//GEN-LAST:event_jButton30ActionPerformed
 
     private void jButton31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton31ActionPerformed
         int n = Integer.parseInt(JOptionPane.showInputDialog("valor"));
-        _28_eliminar_multiplos_x.eliminarMultiplos(p, n);
+        opPares.eliminarMultiplos(p, n);
     }//GEN-LAST:event_jButton31ActionPerformed
+
+    private void jButton32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton32ActionPerformed
+        String s = opPares.frecuencia(p);
+        area.append("\n" + s);
+    }//GEN-LAST:event_jButton32ActionPerformed
+
+    private void jButton33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton33ActionPerformed
+        int n = Integer.parseInt(JOptionPane.showInputDialog("limite de la serie"));
+        opPares.generarSerie(p, n);
+    }//GEN-LAST:event_jButton33ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -546,6 +572,8 @@ public class PilasF extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton30;
     private javax.swing.JButton jButton31;
+    private javax.swing.JButton jButton32;
+    private javax.swing.JButton jButton33;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;

@@ -103,16 +103,32 @@ public class OperacionesPracticaImpares {
      *
      * Dada una Pila P, sumar el primer elemento y último elemento.
      *
+     * @param p
+     * @return 
      */
-    
-    
-    
+    public int sumarPrimeroUltimo(Pila p) {
+        Pila aux = new Pila(p.max);
+        int first = p.pop();
+        aux.push(first);
+        int last = 0;
+        while (!p.estaVacio()) {
+            last = p.pop();
+            aux.push(last);
+        }
+
+        p.reset(aux);
+        return first + last;
+    }
+
     /**
      * Ejer 11
      *
-     * Dada una P sumar los elementos primos de la pila
+     * Dada una Pila P, encontrar el elemento par e impar de la Pila
      *
      */
+    
+    
+    
     /**
      * Ejer 13
      *
@@ -193,7 +209,6 @@ public class OperacionesPracticaImpares {
         p.push(3);
         p.push(4);
         System.out.println(" " + p.listar() + "\n\n");
-        op.invertir(p);
-        System.out.println(" " + p.listar());
+        System.out.println(" " + op.sumarPrimeroUltimo(p));
     }
 }

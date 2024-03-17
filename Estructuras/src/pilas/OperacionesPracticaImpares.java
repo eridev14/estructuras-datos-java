@@ -85,15 +85,28 @@ public class OperacionesPracticaImpares {
     /**
      * Ejer 07
      *
-     * Dada una P sumar los elementos primos de la pila
+     * Dada una Pila P, Invertir la Pila
      *
+     * @param p
      */
+    public void invertir(Pila p) {
+        Pila aux = new Pila(p.max);
+        p.copiar(aux);
+        while (!p.estaVacio()) {
+            p.pop();
+        }
+        p.reset(aux);
+    }
+
     /**
      * Ejer 09
      *
-     * Dada una P sumar los elementos primos de la pila
+     * Dada una Pila P, sumar el primer elemento y último elemento.
      *
      */
+    
+    
+    
     /**
      * Ejer 11
      *
@@ -172,4 +185,15 @@ public class OperacionesPracticaImpares {
      * Dada una P sumar los elementos primos de la pila
      *
      */
+    public static void main(String[] args) {
+        OperacionesPracticaImpares op = new OperacionesPracticaImpares();
+        Pila p = new Pila(5);
+        p.push(1);
+        p.push(8);
+        p.push(3);
+        p.push(4);
+        System.out.println(" " + p.listar() + "\n\n");
+        op.invertir(p);
+        System.out.println(" " + p.listar());
+    }
 }

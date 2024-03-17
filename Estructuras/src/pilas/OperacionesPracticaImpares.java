@@ -104,7 +104,7 @@ public class OperacionesPracticaImpares {
      * Dada una Pila P, sumar el primer elemento y último elemento.
      *
      * @param p
-     * @return 
+     * @return
      */
     public int sumarPrimeroUltimo(Pila p) {
         Pila aux = new Pila(p.max);
@@ -123,12 +123,35 @@ public class OperacionesPracticaImpares {
     /**
      * Ejer 11
      *
-     * Dada una Pila P, encontrar el elemento par e impar de la Pila
+     * Dada una Pila P, encontrar el primer elemento par e impar de la Pila
      *
+     * @param p
+     * @return
      */
-    
-    
-    
+    /*
+    public static primerPar(p) {
+        
+    }
+     */
+    public String encontrarParImpar(Pila p) {
+        Pila aux = new Pila(p.max);
+        String par = "";
+        String impar = "";
+        while (!p.estaVacio()) {
+            int val = p.pop();
+            if (val % 2 == 0) {
+                par += val;
+            } else {
+                impar += val;
+            }
+            aux.push(val);
+        }
+
+        p.reset(aux);
+        String parImpar = "Primer par: " + par.charAt(0) + "\n Primer Impar" + impar.charAt(0);
+        return parImpar;
+    }
+
     /**
      * Ejer 13
      *

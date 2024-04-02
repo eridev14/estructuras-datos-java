@@ -155,9 +155,61 @@ public class OperacionesPracticaImpares {
     /**
      * Ejer 13
      *
-     * Dada una P sumar los elementos primos de la pila
+     * Dada una Pila P ordenar los elementos de la Pila.
      *
+     * @param p
      */
+    public void ordenar(Pila p) {
+        Pila aux = new Pila(p.max);
+        Pila aux1 = new Pila(p.max);
+        while (!p.estaVacio()) {
+            int mayor = mayor(p);
+            while (!p.estaVacio()) {
+                int val = p.pop();
+                if (val == mayor) {
+                    aux.push(val);
+                } else {
+                    aux1.push(val);
+                }
+            }
+
+            p.reset(aux1);
+        }
+
+        p.reset(aux);
+    }
+
+    /*encotrar elemento menor de la pila*/
+    public int menor(Pila p) {
+        Pila aux = new Pila(p.max);
+        int menor = p.pop();
+        while (!p.estaVacio()) {
+            int val = p.pop();
+            if (val < menor) {
+                menor = val;
+            }
+            aux.push(val);
+        }
+        p.reset(aux);
+        return menor;
+    }
+
+    /*encotrar elemento mayor de la pila*/
+    public int mayor(Pila p) {
+        Pila aux = new Pila(p.max);
+        int mayor = p.pop();
+        aux.push(mayor);
+        while (!p.estaVacio()) {
+            int val = p.pop();
+            aux.push(val);
+            if (val > mayor) {
+                mayor = val;
+            }
+        }
+        p.reset(aux);
+        return mayor;
+    }
+
     /**
      * Ejer 15
      *
@@ -232,6 +284,10 @@ public class OperacionesPracticaImpares {
         p.push(3);
         p.push(4);
         System.out.println(" " + p.listar() + "\n\n");
-        System.out.println(" " + op.sumarPrimeroUltimo(p));
+        op.ordenar(p);
+        System.out.println(" " + p.listar() + "\n\n");
+        System.out.println("mayor" + op.mayor(p) + "\n\n");
+        System.out.println(" " + p.listar() + "\n\n");
+
     }
 }

@@ -213,9 +213,27 @@ public class OperacionesPracticaImpares {
     /**
      * Ejer 15
      *
-     * Dada una P sumar los elementos primos de la pila
+     * Dada una Pila P ordenada, insertar un elemento X en el lugar que le
+     * corresponde.
      *
+     * @param p
+     * @param x
      */
+    public void insetarX(Pila p, int x) {
+        Pila aux = new Pila(p.max);
+        while (!p.estaVacio()) {
+            int val = p.pop();
+            if (x >= val) {
+                aux.push(x);
+                aux.push(val);
+                break;
+            }
+            aux.push(val);
+        }
+
+        p.reset(aux);
+    }
+
     /**
      * Ejer 17
      *
@@ -278,15 +296,14 @@ public class OperacionesPracticaImpares {
      */
     public static void main(String[] args) {
         OperacionesPracticaImpares op = new OperacionesPracticaImpares();
-        Pila p = new Pila(5);
+        Pila p = new Pila(10);
         p.push(1);
-        p.push(8);
+        p.push(2);
         p.push(3);
         p.push(4);
+        p.push(5);
         System.out.println(" " + p.listar() + "\n\n");
-        op.ordenar(p);
-        System.out.println(" " + p.listar() + "\n\n");
-        System.out.println("mayor" + op.mayor(p) + "\n\n");
+        op.insetarX(p, 1);
         System.out.println(" " + p.listar() + "\n\n");
 
     }

@@ -219,7 +219,7 @@ public class OperacionesPracticaImpares {
      * @param p
      * @param x
      */
-    public void insetarX(Pila p, int x) {
+    public void insertarX(Pila p, int x) {
         Pila aux = new Pila(p.max);
         while (!p.estaVacio()) {
             int val = p.pop();
@@ -303,7 +303,7 @@ public class OperacionesPracticaImpares {
         p.push(4);
         p.push(5);
         System.out.println(" " + p.listar() + "\n\n");
-        op.insetarX(p, 1);
+        op.insertarX(p, 1);
         System.out.println(" " + p.listar() + "\n\n");
 
     }

@@ -61,7 +61,7 @@ public class Pila {
 
     public void reset(Pila p) {
         while (!p.estaVacio()) {
-            push(p.pop());
+            this.push(p.pop());
         }
     }
 

@@ -104,7 +104,7 @@ public class OperacionesPracticaPares {
             op.eliminarTodoElem(p, e);
             aux.push(e);
         }
-
+        
         p.reset(aux);
     }
 
@@ -127,7 +127,7 @@ public class OperacionesPracticaPares {
             aux.push(second);
             aux.push(first);
         }
-
+        
         p.reset(aux);
     }
 
@@ -172,7 +172,7 @@ public class OperacionesPracticaPares {
             }
             aux.push(e);
             p.reset(aux);
-
+            
             i++;
         }
     }
@@ -189,16 +189,17 @@ public class OperacionesPracticaPares {
     public Pila mezclaPilas(Pila a, Pila b) {
         Pila c = new Pila(a.tope + b.tope);
         Pila aux = new Pila(c.max);
-        while (!a.estaVacio()) {
-            aux.push(a.pop());
+        while (!a.estaVacio() || !b.estaVacio()) {
+            if (!a.estaVacio()) {
+                aux.push(a.pop());
+            }
+            if (!b.estaVacio()) {
+                aux.push(b.pop());
+            }
         }
-
-        while (!b.estaVacio()) {
-            aux.push(b.pop());
-        }
-
+        
         c.reset(aux);
-
+        
         return c;
     }
 
@@ -229,7 +230,7 @@ public class OperacionesPracticaPares {
             }
             b.reset(baux);
         }
-
+        
         return "{ " + str + "}";
     }
 
@@ -244,7 +245,7 @@ public class OperacionesPracticaPares {
     public void aprobadosFondo(Pila p) {
         Pila aprobados = new Pila(p.max);
         Pila reprobados = new Pila(p.max);
-
+        
         while (!p.estaVacio()) {
             int nota = p.pop();
             if (nota > 60) {
@@ -272,7 +273,7 @@ public class OperacionesPracticaPares {
                 aux.push(elem);
             }
         }
-
+        
         p.reset(aux);
     }
 
@@ -289,10 +290,10 @@ public class OperacionesPracticaPares {
                 c++;
             }
         }
-
+        
         return c == 2;
     }
-
+    
     public void eliminarPrimos(Pila p) {
         Pila aux = new Pila(p.max);
         while (!p.estaVacio()) {
@@ -301,7 +302,7 @@ public class OperacionesPracticaPares {
                 aux.push(elem);
             }
         }
-
+        
         p.reset(aux);
     }
 
@@ -321,6 +322,7 @@ public class OperacionesPracticaPares {
                 aux.push(elem);
             }
         }
+        p.reset(aux);
     }
 
     /**
@@ -334,12 +336,12 @@ public class OperacionesPracticaPares {
     public String frecuencia(Pila p) {
         Pila pcopy = new Pila(p.max);
         Pila aux = new Pila(pcopy.max);
-
+        
         p.copiar(pcopy);
         Operaciones op = new Operaciones();
         op.eliminarRepetidos(p);
         String s = "";
-
+        
         while (!p.estaVacio()) {
             int elem = p.pop();
             int count = 0;
@@ -351,7 +353,7 @@ public class OperacionesPracticaPares {
                 }
             }
             pcopy.reset(aux);
-
+            
             s = s + elem + " se repite: " + count + " veces \n";
         }
         p.reset(pcopy);

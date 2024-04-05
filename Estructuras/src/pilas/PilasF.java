@@ -437,11 +437,14 @@ public class PilasF extends javax.swing.JFrame {
 
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
         op.llevarParesFondo(p);
+        area.append("\npares fondo \n" + p.listar());
     }//GEN-LAST:event_jButton19ActionPerformed
 
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
         int n = Integer.parseInt(JOptionPane.showInputDialog("cantidad de rotacion"));
         op.rotacion(p, n);
+        area.append("\nrotar: " + n + " veces\n");
+        area.append("rotacion \n" + p.listar());
     }//GEN-LAST:event_jButton20ActionPerformed
 
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
@@ -485,19 +488,23 @@ public class PilasF extends javax.swing.JFrame {
 
     private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
         opPares.aprobadosFondo(p);
+        area.append("\nAprobados al fondo: \n" + p.listar());
     }//GEN-LAST:event_jButton26ActionPerformed
 
     private void jButton29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton29ActionPerformed
         opPares.eliminarPares(p);
+        area.append("\nEliminar Pares: \n" + p.listar());
     }//GEN-LAST:event_jButton29ActionPerformed
 
     private void jButton30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton30ActionPerformed
         opPares.eliminarPrimos(p);
+        area.append("\nEliminar Primos: \n" + p.listar());
     }//GEN-LAST:event_jButton30ActionPerformed
 
     private void jButton31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton31ActionPerformed
         int n = Integer.parseInt(JOptionPane.showInputDialog("valor"));
         opPares.eliminarMultiplos(p, n);
+        area.append("\nEliminar multimplos de " + n + ": \n" + p.listar());
     }//GEN-LAST:event_jButton31ActionPerformed
 
     private void jButton32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton32ActionPerformed

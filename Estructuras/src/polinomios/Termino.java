@@ -20,7 +20,7 @@ public class Termino {
 
     public Termino() {
     }
-    
+
     public int getCoef() {
         return coef;
     }
@@ -39,7 +39,7 @@ public class Termino {
 
     public String getTodo() {
         String s;
-        s = coef + " X^" + exp;
+        s = coef + "X^" + exp;
         return s;
     }
 }

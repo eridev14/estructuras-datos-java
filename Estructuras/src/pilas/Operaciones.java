@@ -242,12 +242,13 @@ public class Operaciones {
     public Pila mezclaPilas(Pila a, Pila b) {
         Pila c = new Pila(a.tope + b.tope);
         Pila aux = new Pila(c.max);
-        while (!a.estaVacio()) {
-            aux.push(a.pop());
-        }
-
-        while (!b.estaVacio()) {
-            aux.push(b.pop());
+        while (!a.estaVacio() || !b.estaVacio()) {
+            if (!a.estaVacio()) {
+                aux.push(a.pop());
+            }
+            if (!b.estaVacio()) {
+                aux.push(b.pop());
+            }
         }
 
         c.reset(aux);
